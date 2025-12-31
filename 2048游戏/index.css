@@ -1,0 +1,473 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    background-color: #faf8ef;
+    color: #776e65;
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+.title-container{
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.title{
+    text-align: center;
+    font-size: 36px;
+    font-weight: 900;
+    color: #13141c;
+    margin:  0 0 15px 0;
+}
+
+.gameplay-container{
+    width: 500px;
+    padding: 15px 0;
+    margin: 0 auto;
+}
+
+.above-game{
+    width: 100%;
+}
+
+.scores-container{
+    text-align: center;
+    display: inline-block;
+}
+
+.RT-score, .ATH-score, .step{
+    position: relative;
+    display: inline-block;
+    background: #a78d74;
+    padding: 10px 25px;
+    font-size: 18px;
+    height: 48px;
+    line-height: 46px;
+    font-weight: bold;
+    border-radius: 3px;
+    min-width: 72px;
+    color: white;
+    text-align: center;
+    user-select: none;
+}
+
+.RT-score::after {
+    content: "分数" !important;
+}
+
+.ATH-score::after {
+    content: "历史最高" !important;
+}
+
+.step::after{
+    content: "已走步数" !important;
+}
+
+.RT-score::after, .ATH-score::after, .step::after {
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    left: 0;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: center;
+    color: #eee4da;
+}
+
+.new-game-btn{
+    float: right;
+    background: #bd956f;
+    padding: 10px 25px;
+    font-size: 18px;
+    height: 48px;
+    line-height: 24px;
+    font-weight: bold;
+    border-radius: 3px;
+    min-width: 72px;
+    color: white;
+    text-align: center;
+    user-select: none;
+}
+
+.game-container{
+    width: 500px;
+    height: 500px;
+    position: relative;
+    padding: 15px;
+    margin-top: 20px;
+    cursor: default;
+    touch-action: none;
+    background: #bbada0;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.grid-container{
+    position: absolute;
+    z-index: 1;
+}
+
+.row{
+    margin-bottom: 15px;
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.row:last-child{
+    margin-bottom: 0;
+}
+
+.grid-cell{
+    width: 106.25px;
+    height: 106.25px;
+    margin-right: 15px;
+    float: left;
+    border-radius: 3px;
+    background: rgba(238, 228, 218, 0.35);
+}
+
+.grid-cell:last-child {
+    margin-right: 0;
+}
+
+.tile-container {
+    position: absolute;
+    z-index: 2;
+}
+
+.introduction-container{
+    background: #ffeac9;
+}
+
+.introduction{
+    width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.introduction-text{
+    color: #2b2e3a;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 8px;
+}
+
+.game-message{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(238, 228, 218, 0.5);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1300ms ease;
+}
+
+.game-message-show {
+    display: block;
+    opacity: 1;
+}
+
+.game-message > p{
+    font-size: 60px;
+    font-weight: bold;
+    height: 60px;
+    line-height: 60px;
+    margin-top: 222px;
+}
+
+.lower{
+    margin-top: 30px;
+}
+
+.continue-btn, .restart-btn{
+    display: inline-block;
+    background: #bd956f;
+    padding: 10px 25px;
+    font-size: 18px;
+    height: 48px;
+    line-height: 24px;
+    font-weight: bold;
+    border-radius: 3px;
+    min-width: 72px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+}
+@media (max-width: 1199px) {
+    .title-container {
+        width: 100%;
+    }
+    .introduction{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .gameplay-container {
+        width: 280px;
+        margin: 0 auto;
+    }
+
+    .RT-score, .ATH-score, .step {
+        margin-top: 0;
+        padding: 10px 10px;
+        min-width: 64px;
+    }
+
+    .new-game-btn {
+        display: block;
+        box-sizing: border-box;
+        font-size: 13px;
+    }
+
+    .game-container {
+        margin-top: 17px;
+        position: relative;
+        padding: 10px;
+        cursor: default;
+        touch-action: none;
+        background: #bbada0;
+        border-radius: 6px;
+        width: 280px;
+        height: 280px;
+        box-sizing: border-box;
+    }
+
+    .grid-container {
+        position: absolute;
+        z-index: 1;
+    }
+
+    .game-message > p {
+        font-size: 30px !important;
+        height: 30px !important;
+        line-height: 30px !important;
+        margin-top: 90px !important;
+    }
+
+    .row {
+        margin-bottom: 10px;
+    }
+
+    .grid-cell {
+        width: 57.5px;
+        height: 57.5px;
+        margin-right: 10px;
+        float: left;
+        border-radius: 3px;
+        background: rgba(238, 228, 218, 0.35);
+    }
+
+    .tile-container {
+        position: absolute;
+        z-index: 2;
+    }
+}
+
+@media (max-width: 767px) {
+    .title {
+        font-size: 28px;
+        line-height: 28px;
+    }
+    
+    .introduction-text{
+        font-size: 15px;
+    }
+}
+
+/* ================ 2048 图块样式 ================ */
+
+/* 基础图块样式 */
+.tile {
+    width: 107px;
+    height: 107px;
+    text-align: center;
+    line-height: 107px;
+    position: absolute;
+    border-radius: 3px;
+    transition: transform 100ms ease-in-out;
+}
+.tile-inner{
+    font-weight: 700;
+    border-radius: 3px;
+}
+
+/* 不同数值对应的颜色（经典 2048 配色） */
+.tile-2    { background: #eee4da; color: #776e65; }
+.tile-4    { background: #ede0c8; color: #776e65; }
+.tile-8    { background: #f2b179; color: #f9f6f2; }
+.tile-16   { background: #f59563; color: #f9f6f2; }
+.tile-32   { background: #f67c5f; color: #f9f6f2; }
+.tile-64   { background: #f65e3b; color: #f9f6f2; }
+.tile-128  { background: #edcf72; color: #f9f6f2; font-size: 38px; }
+.tile-256  { background: #edcc61; color: #f9f6f2; font-size: 38px; }
+.tile-512  { background: #edc850; color: #f9f6f2; font-size: 38px; }
+.tile-1024 { background: #edc53f; color: #f9f6f2; font-size: 30px; }
+.tile-2048 { background: #edc22e; color: #f9f6f2; font-size: 30px; }
+
+.tile-2, .tile-4, .tile-16, .tile-32, .tile-8, .tile-64{
+    font-size: 55px;
+}
+
+.tile-128,
+.tile-256,
+.tile-512 {
+    font-size: 45px;
+}
+
+.tile-1024,
+.tile-2048{
+    font-size: 30px;
+}
+
+/* 不同位置图块样式 */
+.tile-position-1-1{
+    transform: translateY(0) translateX(0);
+}
+.tile-position-1-2{
+    transform: translateY(0) translateX(121px);
+}
+.tile-position-1-3{
+    transform: translateY(0) translateX(242px);
+}
+.tile-position-1-4{
+    transform: translateY(0) translateX(363px);
+}
+.tile-position-2-1{
+    transform: translateY(121px) translateX(0);
+}
+.tile-position-2-2{
+    transform: translateY(121px) translateX(121px);
+}
+.tile-position-2-3{
+    transform: translateY(121px) translateX(242px);
+}
+.tile-position-2-4{
+    transform: translateY(121px) translateX(363px);
+}
+.tile-position-3-1{
+    transform: translateY(242px) translateX(0);
+}
+.tile-position-3-2{
+    transform: translateY(242px) translateX(121px);
+}
+.tile-position-3-3{
+    transform: translateY(242px) translateX(242px);
+}
+.tile-position-3-4{
+    transform: translateY(242px) translateX(363px);
+}
+.tile-position-4-1{
+    transform: translateY(363px) translateX(0);
+}
+.tile-position-4-2{
+    transform: translateY(363px) translateX(121px);
+}
+.tile-position-4-3{
+    transform: translateY(363px) translateX(242px);
+}
+.tile-position-4-4{
+    transform: translateY(363px) translateX(363px);
+}
+
+@keyframes appear {
+    0% {
+        transform: scale(0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ================ 移动端适配 ================ */
+@media screen and (max-width: 520px) {
+    .tile {
+        width: 58px;
+        height: 58px;
+        line-height: 57.5px;
+    }
+
+
+
+    .tile-2, .tile-4, .tile-16, .tile-32, .tile-8, .tile-64{
+        font-size: 35px;
+    }
+
+    .tile-128,
+    .tile-256,
+    .tile-512 {
+        font-size: 24px;
+    }
+
+    .tile-1024,
+    .tile-2048{
+        font-size: 20px;
+    }
+
+    .tile-position-1-1{
+        transform: translateY(0) translateX(0);
+    }
+    .tile-position-1-2{
+        transform: translateY(0) translateX(67px);
+    }
+    .tile-position-1-3{
+        transform: translateY(0) translateX(134px);
+    }
+    .tile-position-1-4{
+        transform: translateY(0) translateX(201px);
+    }
+    .tile-position-2-1{
+        transform: translateY(67px) translateX(0);
+    }
+    .tile-position-2-2{
+        transform: translateY(67px) translateX(67px);
+    }
+    .tile-position-2-3{
+        transform: translateY(67px) translateX(134px);
+    }
+    .tile-position-2-4{
+        transform: translateY(67px) translateX(201px);
+    }
+    .tile-position-3-1{
+        transform: translateY(134px) translateX(0);
+    }
+    .tile-position-3-2{
+        transform: translateY(134px) translateX(67px);
+    }
+    .tile-position-3-3{
+        transform: translateY(134px) translateX(134px);
+    }
+    .tile-position-3-4{
+        transform: translateY(134px) translateX(201px);
+    }
+    .tile-position-4-1{
+        transform: translateY(201px) translateX(0);
+    }
+    .tile-position-4-2{
+        transform: translateY(201px) translateX(67px);
+    }
+    .tile-position-4-3{
+        transform: translateY(201px) translateX(134px);
+    }
+    .tile-position-4-4{
+        transform: translateY(201px) translateX(201px);
+    }
+}

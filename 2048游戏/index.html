@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048Game</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="main">
+       <div class="title-container">
+        <h1 class="title">2048 游戏</h1>
+       </div>
+
+       <div class="gameplay-container">
+           <div class="above-game">
+                <div class="scores-container">
+                    <div class="RT-score"></div>
+                    <div class="ATH-score"></div>
+                    <div class="step"></div>
+                </div>
+                <a class="new-game-btn">重来</a>
+            </div>
+
+            <div class="game-container">
+                <div class="game-message">
+                    <p></p>
+                    <div class="lower">
+                        <a class="continue-btn">继续</a>
+                        <a class="restart-btn">再来一次</a>
+                    </div>
+                </div>
+                <div class="grid-container">
+                    <div class="row">
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                    </div>
+                    <div class="row">
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                        <div class="grid-cell"></div>
+                    </div>
+                </div>
+
+                <div class="tile-container"></div>
+            </div>
+       </div>
+
+       <div class="introduction-container">
+        <div class="introduction">
+            <h3 class="introduction-text">使用箭头键或用手指滑动来移动图块。例如，如果您将 2 个编号为 2 的图块连接起来，它们将变为 4，2 个 4 的图块将变为 8，依此类推。游戏的重点是获得 2048 图块！</h3>
+        </div>
+       </div>
+
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
