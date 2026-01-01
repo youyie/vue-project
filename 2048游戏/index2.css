@@ -227,7 +227,7 @@ html,body{
     .RT-score, .ATH-score, .step {
         margin-top: 0;
         padding: 10px 10px;
-        min-width: 64px;
+        min-width: 60px;
     }
 
     .new-game-btn {
